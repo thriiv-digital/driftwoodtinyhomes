@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/wollongong-web-design-co-f9cb3801-1839-4d82-a59f-d0495c263a0d/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/wollongong-web-design-co-f9cb3801-1839-4d82-a59f-d0495c263a0d/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/wollongong-web-design-co-f9cb3801-1839-4d82-a59f-d0495c263a0d/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/wollongong-web-design-co-f9cb3801-1839-4d82-a59f-d0495c263a0d/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/wollongong-web-design-co-f9cb3801-1839-4d82-a59f-d0495c263a0d/tokens/shadows.css">
+  <link rel="stylesheet" href="_ds/wollongong-web-design-co-f9cb3801-1839-4d82-a59f-d0495c263a0d/tokens/borders.css">
+  <link rel="stylesheet" href="_ds/wollongong-web-design-co-f9cb3801-1839-4d82-a59f-d0495c263a0d/tokens/animation.css">
+  <link rel="stylesheet" href="_ds/wollongong-web-design-co-f9cb3801-1839-4d82-a59f-d0495c263a0d/styles.css">
+  <script src="_ds/wollongong-web-design-co-f9cb3801-1839-4d82-a59f-d0495c263a0d/_ds_bundle.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap">
+  <style>
+    body { margin: 0; background: #fff; }
+    a { color: var(--color-teal-700); }
+    a:hover { color: var(--color-teal-800); }
+    .dth-fadeup { animation: dth-fadeup 500ms ease both; }
+    @keyframes dth-fadeup { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    summary::-webkit-details-marker { display: none; }
+    .dth-icon { display: inline-block; vertical-align: middle; }
+  </style>
+</helmet>
+
+<div style="font-family: var(--font-sans); color: var(--text-primary); background: #fff; overflow-x: hidden;">
+
+  <!-- NAV -->
+  <nav style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 10px clamp(20px, 4vw, 56px); background: #F2E9D8;">
+    <a href="#top" style="position: relative; display: block; width: 335px; height: 40px; text-decoration: none;">
+      <img src="uploads/logo-LG-driftwood-tiny-homes.png" alt="Driftwood Tiny Homes" style="position: absolute; top: -2px; left: 0; height: 299px; width: auto; display: block; filter: drop-shadow(0 3px 8px rgba(0,0,0,0.18));">
+    </a>
+    <div style="display: flex; align-items: center; gap: 28px;">
+      <div style="display: flex; gap: 22px; font-size: 14px; font-weight: 600; color: var(--color-neutral-800);">
+        <a href="#models" style="text-decoration: none; color: inherit;">Models</a>
+        <a href="#gallery" style="text-decoration: none; color: inherit;">Gallery</a>
+        <a href="#process" style="text-decoration: none; color: inherit;">Process</a>
+        <a href="#about" style="text-decoration: none; color: inherit;">About</a>
+        <a href="#faq" style="text-decoration: none; color: inherit;">FAQ</a>
+      </div>
+      <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Button" variant="cta" size="sm" hint-size="120px,36px">
+        <a href="#contact" style="color: #fff; text-decoration: none;">Get a Quote</a>
+      </x-import>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" style="position: relative; background: #F2E9D8;">
+    <div style="position: relative; width: 100%; display: flex; justify-content: flex-end;">
+      <img src="uploads/pasted-1784183029036-0.png" alt="Driftwood tiny home at sunset in the Illawarra" style="width: 70%; height: 760px; object-fit: cover; display: block;">
+
+      <div class="dth-fadeup" style="position: absolute; left: clamp(20px, 4vw, 56px); bottom: 44px; max-width: 540px; background: #21525E; color: #fff; border-radius: 20px; padding: 52px 52px 48px; box-shadow: var(--shadow-lg);">
+        <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-300); margin-bottom: 16px;">
+          <svg class="dth-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.5 7-12a7 7 0 10-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Shellharbour, NSW &amp; the Illawarra
+        </span>
+        <h1 style="font-size: clamp(1.9rem, 3vw, 2.5rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 16px;">
+          Handcrafted tiny homes, built for the way you actually want to live.
+        </h1>
+        <p style="font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.85); margin: 0 0 28px;">
+          A local Shellharbour crew designing and building warm, liveable tiny homes on wheels — from weekend escapes to full-time coastal living.
+        </p>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Button" variant="cta" size="lg" hint-size="180px,52px">
+            <a href="#contact" style="color: #fff; text-decoration: none;">Get a Free Quote</a>
+          </x-import>
+          <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Button" variant="secondary" size="lg" hint-size="180px,52px">
+            <a href="#models" style="color: var(--color-neutral-800); text-decoration: none;">View Floor Plans</a>
+          </x-import>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TRUST STRIP -->
+  <section style="background: var(--color-neutral-900); padding: 28px clamp(20px, 4vw, 56px);">
+    <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 28px; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 10px; color: #fff; font-size: 14px; font-weight: 600;">
+        <svg class="dth-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-400)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+        Fixed-price, no surprises
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; color: #fff; font-size: 14px; font-weight: 600;">
+        <svg class="dth-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-400)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+        10–14 week builds
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; color: #fff; font-size: 14px; font-weight: 600;">
+        <svg class="dth-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-400)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        Engineer-certified &amp; road ready
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; color: #fff; font-size: 14px; font-weight: 600;">
+        <svg class="dth-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-400)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="9" r="3"/><circle cx="16" cy="10.5" r="2.3"/><path d="M2.5 20c0-3 2.5-5 6-5s6 2 6 5"/><path d="M13.5 15.2c2.7.3 4.5 2 4.5 4.8"/></svg>
+        Proudly local Illawarra crew
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY TINY HOMES -->
+  <section id="about" style="padding: var(--section-padding-y) clamp(20px, 4vw, 56px); background: radial-gradient(ellipse 900px 600px at 12% 15%, rgba(255,255,255,0.10), transparent 60%), radial-gradient(ellipse 800px 700px at 90% 85%, rgba(255,255,255,0.07), transparent 60%), #21525E;">
+    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center;">
+      <div>
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-300);">Why go tiny</span>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; margin: 10px 0 20px; color: #fff;">More life, less house.</h2>
+        <p style="font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.8); margin: 0 0 18px;">
+          We build tiny homes the way we'd want one built for us — warm timber, generous light, and a layout that actually works for daily life on the South Coast. No project-home gloss, no cutting corners.
+        </p>
+        <p style="font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.8); margin: 0 0 28px;">
+          Whether it's a granny flat in the backyard, a beach escape, or your only home, every Driftwood build starts with a conversation about how you actually live.
+        </p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <svg class="dth-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-400)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+            <div><strong style="display:block; font-size:15px; color:#fff;">Light-filled layouts</strong><span style="font-size:14px; color: rgba(255,255,255,0.7);">Big glazing, high ceilings</span></div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <svg class="dth-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-300)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M20 4C10 4 4 10 4 18c0 1 .3 2 .3 2s1-.3 2-.3c8 0 14-6 14-16 0 0-.3 0-.3 0z"/><path d="M5 19c3-3 8-8 13-14"/></svg>
+            <div><strong style="display:block; font-size:15px; color:#fff;">Sustainable materials</strong><span style="font-size:14px; color: rgba(255,255,255,0.7);">Responsibly sourced timber</span></div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <svg class="dth-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-400)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M2 7h11v9H2z"/><path d="M13 10h4l3 3v3h-7z"/><circle cx="6" cy="18" r="1.6"/><circle cx="16.5" cy="18" r="1.6"/></svg>
+            <div><strong style="display:block; font-size:15px; color:#fff;">Move-ready</strong><span style="font-size:14px; color: rgba(255,255,255,0.7);">Registered &amp; towable</span></div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <svg class="dth-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-300)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M12 20s-7-4.5-9.5-9C1 8 2 4.5 5.5 4c2-.3 3.7.8 4.5 2.3C10.8 4.8 12.5 3.7 14.5 4 18 4.5 19 8 17.5 11c-2.5 4.5-9.5 9-9.5 9z"/></svg>
+            <div><strong style="display:block; font-size:15px; color:#fff;">Built with you</strong><span style="font-size:14px; color: rgba(255,255,255,0.7);">Face-to-face, every step</span></div>
+          </div>
+        </div>
+      </div>
+      <img src="uploads/Gemini_Generated_Image_rvl23ervl23ervl2.png" alt="Bright tiny home interior with kitchen and living area" style="width: 100%; height: 520px; object-fit: cover; border-radius: var(--radius-2xl); box-shadow: var(--shadow-lg);">
+    </div>
+  </section>
+
+  <!-- FEATURED MODELS -->
+  <section id="models" style="padding: var(--section-padding-y) clamp(20px, 4vw, 56px); background: var(--surface-subtle);">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div style="text-align: center; max-width: 640px; margin: 0 auto 48px;">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-teal-600);">Our floor plans</span>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; margin: 10px 0 12px; color: var(--color-primary-900);">Three homes, endlessly liveable.</h2>
+        <p style="font-size: 17px; color: var(--text-secondary); line-height: 1.6; margin: 0;">Every model is fully customisable — these are simply where the conversation starts.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+
+        <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Card" variant="default" padding="none" radius="xl" hoverable="{{ true }}" hint-size="100%,520px">
+          <div>
+            <img src="uploads/pasted-1784183040334-0.png" alt="The Bellambi tiny home in the forest" style="width: 100%; height: 230px; object-fit: cover; border-radius: var(--radius-xl) var(--radius-xl) 0 0;">
+            <div style="padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <h3 style="font-size: 21px; font-weight: 700; margin: 0; color: var(--color-primary-900);">The Bellambi</h3>
+                <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Badge" variant="teal" hint-size="auto,22px">1 Bed</x-import>
+              </div>
+              <p style="font-size: 14px; color: var(--text-secondary); margin: 0 0 16px;">6.0m · Sleeps 2 · Deck &amp; wood fire</p>
+              <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6; margin: 0 0 18px;">A cosy off-grid-ready escape with a full-height loft and a wraparound deck for morning coffee.</p>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 20px; font-weight: 800; color: var(--color-accent-600);">from $74,000</span>
+                <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Button" variant="outline" size="sm" hint-size="90px,36px">
+                  <a href="#contact" style="text-decoration: none; color: inherit;">Enquire</a>
+                </x-import>
+              </div>
+            </div>
+          </div>
+        </x-import>
+
+        <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Card" variant="default" padding="none" radius="xl" hoverable="{{ true }}" hint-size="100%,520px">
+          <div>
+            <img src="uploads/pasted-1784183075722-0.png" alt="The Killalea tiny home with deck and fire pit" style="width: 100%; height: 230px; object-fit: cover; border-radius: var(--radius-xl) var(--radius-xl) 0 0;">
+            <div style="padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <h3 style="font-size: 21px; font-weight: 700; margin: 0; color: var(--color-primary-900);">The Killalea</h3>
+                <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Badge" variant="accent" hint-size="auto,22px">2 Bed</x-import>
+              </div>
+              <p style="font-size: 14px; color: var(--text-secondary); margin: 0 0 16px;">8.4m · Sleeps 4 · Full-length deck</p>
+              <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6; margin: 0 0 18px;">Our most popular family layout — vaulted ceilings, a second bedroom, and a deck built for entertaining.</p>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 20px; font-weight: 800; color: var(--color-accent-600);">from $118,000</span>
+                <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Button" variant="outline" size="sm" hint-size="90px,36px">
+                  <a href="#contact" style="text-decoration: none; color: inherit;">Enquire</a>
+                </x-import>
+              </div>
+            </div>
+          </div>
+        </x-import>
+
+        <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Card" variant="default" padding="none" radius="xl" hoverable="{{ true }}" hint-size="100%,520px">
+          <div>
+            <img src="uploads/pasted-1784183029036-0.png" alt="The Windang tiny home exterior at dusk" style="width: 100%; height: 230px; object-fit: cover; border-radius: var(--radius-xl) var(--radius-xl) 0 0;">
+            <div style="padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <h3 style="font-size: 21px; font-weight: 700; margin: 0; color: var(--color-primary-900);">The Windang</h3>
+                <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Badge" variant="teal" hint-size="auto,22px">1 Bed +</x-import>
+              </div>
+              <p style="font-size: 14px; color: var(--text-secondary); margin: 0 0 16px;">7.2m · Sleeps 3 · Study nook</p>
+              <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6; margin: 0 0 18px;">Standing-seam roof and a striking gable window — built for full-time, everyday living.</p>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 20px; font-weight: 800; color: var(--color-accent-600);">from $95,000</span>
+                <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Button" variant="outline" size="sm" hint-size="90px,36px">
+                  <a href="#contact" style="text-decoration: none; color: inherit;">Enquire</a>
+                </x-import>
+              </div>
+            </div>
+          </div>
+        </x-import>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" style="padding: var(--section-padding-y) clamp(20px, 4vw, 56px); background: #fff;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div style="text-align: center; max-width: 640px; margin: 0 auto 48px;">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-teal-600);">How it works</span>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; margin: 10px 0 12px; color: var(--color-primary-900);">From first sketch to move-in day.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+        <div style="text-align: center; padding: 0 12px;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--color-teal-50); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l4-1 11-11-3-3L4 17l-1 4z"/><path d="M14 6l3 3"/></svg>
+          </div>
+          <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 8px; color: var(--color-primary-900);">1. Design</h3>
+          <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin: 0;">A free consult at our Shellharbour workshop to shape your layout and finishes.</p>
+        </div>
+        <div style="text-align: center; padding: 0 12px;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--color-accent-50); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-500)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M9 13l2 2 4-4"/></svg>
+          </div>
+          <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 8px; color: var(--color-primary-900);">2. Approve</h3>
+          <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin: 0;">Fixed-price contract, engineering sign-off, and a locked build date.</p>
+        </div>
+        <div style="text-align: center; padding: 0 12px;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--color-teal-50); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+          </div>
+          <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 8px; color: var(--color-primary-900);">3. Build</h3>
+          <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin: 0;">Weekly photo updates as your home takes shape in our workshop.</p>
+        </div>
+        <div style="text-align: center; padding: 0 12px;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--color-accent-50); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-500)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9"/><path d="M16 7l2 2"/><path d="M19 4l2 2"/></svg>
+          </div>
+          <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 8px; color: var(--color-primary-900);">4. Deliver</h3>
+          <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin: 0;">We tow, site and hand over the keys — anywhere in the Illawarra &amp; beyond.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUSTAINABILITY -->
+  <section id="sustainability" style="padding: var(--section-padding-y) clamp(20px, 4vw, 56px); background: var(--color-neutral-900); color: #fff;">
+    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;">
+      <img src="uploads/Gemini_Generated_Image_hlicnlhlicnlhlic.png" alt="Cosy tiny home interior with wood fire and dining table" style="width: 100%; height: 480px; object-fit: cover; border-radius: var(--radius-2xl);">
+      <div>
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-teal-400);">Built to last, built to belong</span>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; margin: 10px 0 20px;">Materials that feel like home.</h2>
+        <p style="font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.78); margin: 0 0 24px;">
+          We choose timber, insulation and fittings for how they'll feel in ten years — not just how they photograph on day one.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-400)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M12 2l5 8h-3l4 6h-4v6h-4v-6H6l4-6H7z"/></svg>
+            <div><strong>Responsibly sourced timber</strong><p style="margin: 4px 0 0; font-size: 14px; color: rgba(255,255,255,0.7);">Recycled and plantation hardwood cladding, chosen for the coast.</p></div>
+          </div>
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-400)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+            <div><strong>Solar &amp; off-grid ready</strong><p style="margin: 4px 0 0; font-size: 14px; color: rgba(255,255,255,0.7);">Pre-wired for solar, battery, and rainwater harvesting.</p></div>
+          </div>
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-400)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="10" y="3" width="4" height="11" rx="2"/><circle cx="12" cy="18" r="3"/></svg>
+            <div><strong>Genuinely insulated</strong><p style="margin: 4px 0 0; font-size: 14px; color: rgba(255,255,255,0.7);">Comfortable through Illawarra summers and southerly busters alike.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" style="padding: var(--section-padding-y) clamp(20px, 4vw, 56px); background: #fff;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div style="text-align: center; max-width: 640px; margin: 0 auto 40px;">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-teal-600);">Gallery</span>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; margin: 10px 0 0; color: var(--color-primary-900);">A closer look inside &amp; out.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 220px); gap: 16px;">
+        <img src="uploads/Gemini_Generated_Image_rvl23ervl23ervl2.png" alt="Tiny home living area and kitchen" style="grid-column: span 2; grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
+        <img src="uploads/pasted-1784183075722-0.png" alt="Corten-clad tiny home with deck" style="grid-column: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
+        <img src="uploads/Gemini_Generated_Image_hlicnlhlicnlhlic.png" alt="Dining nook with wood fire" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
+        <img src="uploads/pasted-1784183040334-0.png" alt="Dark cabin tiny home in the forest" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="padding: var(--section-padding-y) clamp(20px, 4vw, 56px); background: var(--surface-teal-subtle);">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div style="text-align: center; max-width: 640px; margin: 0 auto 44px;">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-teal-600);">Kind words</span>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; margin: 10px 0 0; color: var(--color-primary-900);">From our neighbours.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Card" variant="default" padding="lg" radius="xl" hint-size="100%,220px">
+          <div>
+            <div style="display:flex; gap:3px; margin-bottom: 12px; color: var(--color-accent-500);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+            </div>
+            <p style="font-size: 15px; line-height: 1.7; color: var(--text-secondary); margin: 0 0 16px;">"They treated our tiny home like it mattered — because to us, it did. Every question got a real, honest answer."</p>
+            <strong style="font-size: 14px; color: var(--color-primary-900);">Meg &amp; Tom R.</strong><span style="display:block; font-size: 13px; color: var(--text-tertiary);">Shellharbour</span>
+          </div>
+        </x-import>
+        <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Card" variant="default" padding="lg" radius="xl" hint-size="100%,220px">
+          <div>
+            <div style="display:flex; gap:3px; margin-bottom: 12px; color: var(--color-accent-500);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+            </div>
+            <p style="font-size: 15px; line-height: 1.7; color: var(--text-secondary); margin: 0 0 16px;">"Our Bellambi build arrived exactly on the date they quoted, down to the week. No stress, no blowouts."</p>
+            <strong style="font-size: 14px; color: var(--color-primary-900);">Priya N.</strong><span style="display:block; font-size: 13px; color: var(--text-tertiary);">Kiama</span>
+          </div>
+        </x-import>
+        <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Card" variant="default" padding="lg" radius="xl" hint-size="100%,220px">
+          <div>
+            <div style="display:flex; gap:3px; margin-bottom: 12px; color: var(--color-accent-500);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.5L5.7 21.5 7 14.5l-5-5 7-1z"/></svg>
+            </div>
+            <p style="font-size: 15px; line-height: 1.7; color: var(--text-secondary); margin: 0 0 16px;">"It doesn't feel 'tiny' at all — the light and the layout make it feel like a proper home."</p>
+            <strong style="font-size: 14px; color: var(--color-primary-900);">Callum D.</strong><span style="display:block; font-size: 13px; color: var(--text-tertiary);">Albion Park</span>
+          </div>
+        </x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL AREA -->
+  <section style="padding: 64px clamp(20px, 4vw, 56px); background: #fff;">
+    <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+      <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-teal-600);">Where we build</span>
+      <h2 style="font-size: clamp(1.6rem, 2.6vw, 2.1rem); font-weight: 800; letter-spacing: -0.02em; margin: 10px 0 16px; color: var(--color-primary-900);">Proudly based in Shellharbour, servicing the Illawarra &amp; South Coast.</h2>
+      <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin: 0 0 24px;">Our workshop is a short drive from wherever you are — we deliver and site homes right across the region.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+        <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Badge" variant="default" hint-size="auto,26px">Shellharbour</x-import>
+        <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Badge" variant="default" hint-size="auto,26px">Wollongong</x-import>
+        <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Badge" variant="default" hint-size="auto,26px">Kiama</x-import>
+        <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Badge" variant="default" hint-size="auto,26px">Nowra</x-import>
+        <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Badge" variant="default" hint-size="auto,26px">Jervis Bay</x-import>
+        <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Badge" variant="default" hint-size="auto,26px">Southern Highlands</x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding: var(--section-padding-y) clamp(20px, 4vw, 56px); background: var(--surface-subtle);">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-teal-600);">FAQ</span>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; margin: 10px 0 0; color: var(--color-primary-900);">Good questions.</h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <details style="background: #fff; border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 18px 22px;">
+          <summary style="cursor: pointer; font-weight: 700; font-size: 16px; color: var(--color-primary-900); list-style: none; display: flex; justify-content: space-between; align-items: center;">Do I need council approval? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.7; color: var(--text-secondary);">Most of our homes are built on a registered trailer, which generally sits outside standard planning approval — though your council and site may have specific rules. We help you check before we start.</p>
+        </details>
+        <details style="background: #fff; border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 18px 22px;">
+          <summary style="cursor: pointer; font-weight: 700; font-size: 16px; color: var(--color-primary-900); list-style: none; display: flex; justify-content: space-between; align-items: center;">How long does a build take? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.7; color: var(--text-secondary);">Typically 10–14 weeks from signed contract, depending on the model and customisations. We'll give you a firm date and stick to it.</p>
+        </details>
+        <details style="background: #fff; border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 18px 22px;">
+          <summary style="cursor: pointer; font-weight: 700; font-size: 16px; color: var(--color-primary-900); list-style: none; display: flex; justify-content: space-between; align-items: center;">Can I customise a floor plan? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.7; color: var(--text-secondary);">Always. Our three models are starting points — we regularly adjust room layouts, decks, and finishes to suit how you live.</p>
+        </details>
+        <details style="background: #fff; border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 18px 22px;">
+          <summary style="cursor: pointer; font-weight: 700; font-size: 16px; color: var(--color-primary-900); list-style: none; display: flex; justify-content: space-between; align-items: center;">Do you deliver outside Shellharbour? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.7; color: var(--text-secondary);">Yes — we regularly deliver across the Illawarra, South Coast, and Southern Highlands, and further afield on request.</p>
+        </details>
+        <details style="background: #fff; border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 18px 22px;">
+          <summary style="cursor: pointer; font-weight: 700; font-size: 16px; color: var(--color-primary-900); list-style: none; display: flex; justify-content: space-between; align-items: center;">What's included in the price? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.7; color: var(--text-secondary);">Trailer, full build, fit-out, appliances, and delivery within the Illawarra. Solar, off-grid systems, and premium finishes are quoted separately so pricing stays transparent.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding: var(--section-padding-y) clamp(20px, 4vw, 56px); background: var(--color-primary-900); color: #fff;">
+    <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px;">
+      <div>
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-teal-400);">Let's talk tiny</span>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.02em; margin: 10px 0 20px;">Get a free, no-pressure quote.</h2>
+        <p style="font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.78); margin: 0 0 28px;">Tell us a bit about what you're after and we'll come back with honest pricing and timing — usually within a day.</p>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 15px;">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-400)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h4l1 5-2.5 2c1 2.5 3 4.5 5.5 5.5l2-2.5 5 1v4c0 1-1 2-2 2C11 20 4 13 4 5c0-1 1-2 2-2z"/></svg>
+            (02) 4295 0173
+          </div>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-400)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6l9 7 9-7"/></svg>
+            hello@driftwoodtinyhomes.com.au
+          </div>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-400)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.5 7-12a7 7 0 10-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Shellharbour, NSW 2529
+          </div>
+        </div>
+      </div>
+      <div style="background: #fff; border-radius: var(--radius-2xl); padding: 32px; box-shadow: var(--shadow-lg);">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Input" label="First name" placeholder="Jamie" full-width="{{ true }}" hint-size="100%,64px"></x-import>
+          <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Input" label="Last name" placeholder="Smith" full-width="{{ true }}" hint-size="100%,64px"></x-import>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Input" label="Email" type="email" placeholder="you@email.com" full-width="{{ true }}" hint-size="100%,64px"></x-import>
+          <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Input" label="Phone" type="tel" placeholder="04xx xxx xxx" full-width="{{ true }}" hint-size="100%,64px"></x-import>
+        </div>
+        <div style="margin-bottom: 16px;">
+          <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Select" label="Which model interests you?" placeholder="Select a model" options="{{ modelOptions }}" full-width="{{ true }}" hint-size="100%,64px"></x-import>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Textarea" label="Tell us about your project" placeholder="Site details, timeline, must-haves..." rows="4" full-width="{{ true }}" hint-size="100%,110px"></x-import>
+        </div>
+        <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Button" variant="cta" size="lg" full-width="{{ true }}" hint-size="100%,52px">Send Enquiry</x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #F2E9D8; color: var(--text-secondary); padding: 48px clamp(20px, 4vw, 56px) 28px;">
+    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;">
+      <div>
+        <img src="uploads/logo-LG-driftwood-tiny-homes.png" alt="Driftwood Tiny Homes" style="height: 179px; width: auto; display: block; margin: -20px 0 4px -14px;">
+        <p style="font-size: 14px; line-height: 1.7; max-width: 280px; margin: 0;">Handcrafted tiny homes, designed and built in Shellharbour, NSW.</p>
+      </div>
+      <div>
+        <strong style="color: var(--color-primary-900); font-size: 14px; display: block; margin-bottom: 14px;">Explore</strong>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+          <a href="#models" style="color: var(--text-secondary); text-decoration: none;">Models</a>
+          <a href="#gallery" style="color: var(--text-secondary); text-decoration: none;">Gallery</a>
+          <a href="#process" style="color: var(--text-secondary); text-decoration: none;">Process</a>
+          <a href="#faq" style="color: var(--text-secondary); text-decoration: none;">FAQ</a>
+        </div>
+      </div>
+      <div>
+        <strong style="color: var(--color-primary-900); font-size: 14px; display: block; margin-bottom: 14px;">Contact</strong>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+          <span>(02) 4295 0173</span>
+          <span>hello@driftwoodtinyhomes.com.au</span>
+          <span>Shellharbour, NSW 2529</span>
+        </div>
+      </div>
+      <div>
+        <strong style="color: var(--color-primary-900); font-size: 14px; display: block; margin-bottom: 14px;">Follow</strong>
+        <div style="display: flex; gap: 14px; color: var(--text-secondary);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15 4h-2a4 4 0 00-4 4v2H7v3h2v7h3v-7h2.5l.5-3H12V8a1 1 0 011-1h2z"/></svg>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1280px; margin: 32px auto 0; padding-top: 20px; border-top: 1px solid rgba(15,23,32,0.12); font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+      <span>&copy; 2026 Driftwood Tiny Homes.</span>
+      <span>Built with driftwood, salt air, and a lot of coffee. &middot; Site by <a href="https://wollongongwebdesignco.com.au" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); text-decoration: underline;">Wollongong Web Design Co</a></span>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1440, &quot;height&quot;: 900}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      modelOptions: [
+        { value: 'bellambi', label: 'The Bellambi — 1 Bed' },
+        { value: 'killalea', label: 'The Killalea — 2 Bed' },
+        { value: 'windang', label: 'The Windang — 1 Bed +' },
+        { value: 'custom', label: 'Something custom' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+/* Wollongong Web Design Co — Animation & Motion Tokens */
+
+:root {
+  /* ── Easing ─────────────────────────────────────────────────────── */
+  --ease-linear:   linear;                               /* @kind other */
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);           /* @kind other */
+  --ease-out:      cubic-bezier(0, 0, 0.2, 1);           /* @kind other */
+  --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);         /* @kind other */
+  --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);    /* @kind other */
+  --ease-back-out: cubic-bezier(0.175, 0.885, 0.32, 1.275); /* @kind other */
+
+  /* ── Durations ──────────────────────────────────────────────────── */
+  --duration-75:   75ms;    /* @kind other */
+  --duration-100:  100ms;   /* @kind other */
+  --duration-150:  150ms;   /* @kind other */
+  --duration-200:  200ms;   /* @kind other */
+  --duration-300:  300ms;   /* @kind other */
+  --duration-500:  500ms;   /* @kind other */
+  --duration-700:  700ms;   /* @kind other */
+  --duration-1000: 1000ms;  /* @kind other */
+
+  /* ── Common Transition Shorthands ───────────────────────────────── */
+  --transition-fast:      all 150ms var(--ease-in-out);   /* @kind other */
+  --transition-base:      all 200ms var(--ease-in-out);   /* @kind other */
+  --transition-slow:      all 300ms var(--ease-in-out);   /* @kind other */
+  --transition-colors:    color 150ms var(--ease-in-out), background-color 150ms var(--ease-in-out), border-color 150ms var(--ease-in-out), fill 150ms var(--ease-in-out); /* @kind other */
+  --transition-shadow:    box-shadow 200ms var(--ease-in-out);   /* @kind other */
+  --transition-transform: transform 200ms var(--ease-spring);    /* @kind other */
+}
+
+/* ── Global keyframes available to all consumers ───────────────── */
+@keyframes wwdc-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes wwdc-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes wwdc-slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes wwdc-slide-down {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes wwdc-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}

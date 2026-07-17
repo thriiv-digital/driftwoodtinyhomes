@@ -1,0 +1,25 @@
+/* Wollongong Web Design Co — Border Tokens */
+
+:root {
+  /* ── Border Radius ──────────────────────────────────────────────── */
+  --radius-none: 0;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-3xl:  32px;
+  --radius-full: 9999px;
+
+  /* ── Border Widths ──────────────────────────────────────────────── */
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-4: 4px;
+
+  /* ── Border Color Tokens ────────────────────────────────────────── */
+  /* (aliases defined in colors.css — consumed here by convention) */
+  --card-border: var(--border-default);
+  --input-border: var(--color-neutral-300);
+  --input-border-focus: var(--color-primary-500);
+  --input-border-error: var(--color-error-500);
+}

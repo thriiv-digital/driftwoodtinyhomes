@@ -1,0 +1,100 @@
+/* Wollongong Web Design Co — Color Tokens */
+
+:root {
+  /* ── Brand Primary: Deep Navy Blue ─────────────────────────────── */
+  --color-primary-50:  #F2F6FD;
+  --color-primary-100: #E5EEFB;
+  --color-primary-200: #C6D9F8;
+  --color-primary-300: #91B9F0;
+  --color-primary-400: #5B92E0;
+  --color-primary-500: #2B6BC5;
+  --color-primary-600: #2051A3;
+  --color-primary-700: #1B3B6F;
+  --color-primary-800: #162D56;
+  --color-primary-900: #0F2240;
+
+  /* ── Teal: Ocean Secondary ──────────────────────────────────────── */
+  --color-teal-50:  #E8F8F7;
+  --color-teal-100: #CCEEED;
+  --color-teal-200: #99DDDB;
+  --color-teal-300: #5EC8C5;
+  --color-teal-400: #1AAFA9;
+  --color-teal-500: #0BA5A0;
+  --color-teal-600: #0B8F88;
+  --color-teal-700: #0A6E69;
+  --color-teal-800: #0D4E4A;
+  --color-teal-900: #093530;
+
+  /* ── Accent: Warm Orange (CTAs & Energy) ────────────────────────── */
+  --color-accent-50:  #FFF3ED;
+  --color-accent-100: #FFE0CC;
+  --color-accent-200: #FFBA99;
+  --color-accent-300: #FF8C66;
+  --color-accent-400: #FF7040;
+  --color-accent-500: #F2631C;
+  --color-accent-600: #D44D10;
+  --color-accent-700: #B33C0A;
+  --color-accent-800: #7A2800;
+  --color-accent-900: #521A00;
+
+  /* ── Neutral: Slate Grays ───────────────────────────────────────── */
+  --color-neutral-50:  #F8F9FA;
+  --color-neutral-100: #F0F2F5;
+  --color-neutral-200: #E2E6EA;
+  --color-neutral-300: #CBD1D9;
+  --color-neutral-400: #9DA8B4;
+  --color-neutral-500: #6B7685;
+  --color-neutral-600: #4A5565;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1E2B3C;
+  --color-neutral-900: #0F172A;
+
+  /* ── Semantic ───────────────────────────────────────────────────── */
+  --color-success-50:  #F0FDF4;
+  --color-success-100: #DCFCE7;
+  --color-success-500: #16A34A;
+  --color-success-700: #15803D;
+
+  --color-warning-50:  #FFFBEB;
+  --color-warning-100: #FEF3C7;
+  --color-warning-500: #D97706;
+  --color-warning-700: #B45309;
+
+  --color-error-50:  #FEF2F2;
+  --color-error-100: #FEE2E2;
+  --color-error-500: #DC2626;
+  --color-error-600: #C41E1E;
+  --color-error-700: #B91C1C;
+
+  --color-info-50:  #EFF6FF;
+  --color-info-100: #DBEAFE;
+  --color-info-500: #2563EB;
+  --color-info-700: #1D4ED8;
+
+  /* ── Semantic Aliases ───────────────────────────────────────────── */
+  --text-primary:     var(--color-neutral-900);
+  --text-secondary:   var(--color-neutral-600);
+  --text-tertiary:    var(--color-neutral-400);
+  --text-on-brand:    #ffffff;
+  --text-link:        var(--color-primary-600);
+  --text-link-hover:  var(--color-primary-700);
+  --text-inverse:     #ffffff;
+
+  --surface-default:       #ffffff;
+  --surface-subtle:        var(--color-neutral-50);
+  --surface-raised:        #ffffff;
+  --surface-brand:         var(--color-primary-700);
+  --surface-brand-subtle:  var(--color-primary-50);
+  --surface-dark:          var(--color-neutral-900);
+  --surface-teal-subtle:   var(--color-teal-50);
+
+  --border-default:  var(--color-neutral-200);
+  --border-strong:   var(--color-neutral-300);
+  --border-focus:    var(--color-primary-500);
+  --border-error:    var(--color-error-500);
+
+  --interactive-primary:       var(--color-primary-700);
+  --interactive-primary-hover: var(--color-primary-800);
+  --interactive-cta:           var(--color-accent-500);
+  --interactive-cta-hover:     var(--color-accent-600);
+}

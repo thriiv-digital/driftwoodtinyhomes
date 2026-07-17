@@ -1,0 +1,12 @@
+/* Wollongong Web Design Co — Design System
+ * Global stylesheet entry point.
+ * Consumers: link ONLY this file. Everything else is pulled in via @import.
+ */
+
+@import './tokens/fonts.css';
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/shadows.css';
+@import './tokens/borders.css';
+@import './tokens/animation.css';
