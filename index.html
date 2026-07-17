@@ -28,24 +28,45 @@
     summary::-webkit-details-marker { display: none; }
     .dth-icon { display: inline-block; vertical-align: middle; }
 
-    /* HERO CAROUSEL */
+    /* HERO CAROUSEL — slide 1 is the CSS default (not the [checked] attribute, which the
+       page's runtime strips from radios); :checked rules only ever override that default. */
     .hero-radio { display: none; }
     .hero-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 900ms ease; }
-    #dth-s1:checked ~ .hero-slides .hero-slide:nth-child(1) { opacity: 1; }
+    .hero-slide:nth-child(1) { opacity: 1; }
+    #dth-s2:checked ~ .hero-slides .hero-slide:nth-child(1),
+    #dth-s3:checked ~ .hero-slides .hero-slide:nth-child(1) { opacity: 0; }
     #dth-s2:checked ~ .hero-slides .hero-slide:nth-child(2) { opacity: 1; }
     #dth-s3:checked ~ .hero-slides .hero-slide:nth-child(3) { opacity: 1; }
     .hero-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; background: rgba(15,23,32,0.45); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; line-height: 1; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 200ms ease, background 200ms ease; z-index: 6; user-select: none; }
     .hero-arrow:hover { background: rgba(15,23,32,0.72); }
     .hero-arrow-prev { left: 20px; }
     .hero-arrow-next { right: 20px; }
-    #dth-s1:checked ~ .arrow-set-1 { opacity: 1; pointer-events: auto; }
+    .arrow-set-1 { opacity: 1; pointer-events: auto; }
+    #dth-s2:checked ~ .arrow-set-1,
+    #dth-s3:checked ~ .arrow-set-1 { opacity: 0; pointer-events: none; }
     #dth-s2:checked ~ .arrow-set-2 { opacity: 1; pointer-events: auto; }
     #dth-s3:checked ~ .arrow-set-3 { opacity: 1; pointer-events: auto; }
     .hero-dots { position: absolute; bottom: 24px; right: 32px; display: flex; gap: 9px; z-index: 6; }
     .hero-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.45); cursor: pointer; transition: background 200ms ease, transform 200ms ease; display: block; }
-    #dth-s1:checked ~ .hero-dots .dot-1,
+    .dot-1 { background: #fff; transform: scale(1.25); }
+    #dth-s2:checked ~ .hero-dots .dot-1,
+    #dth-s3:checked ~ .hero-dots .dot-1 { background: rgba(255,255,255,0.45); transform: scale(1); }
     #dth-s2:checked ~ .hero-dots .dot-2,
     #dth-s3:checked ~ .hero-dots .dot-3 { background: #fff; transform: scale(1.25); }
+
+    /* GALLERY: hover feature + CSS-only lightbox (uses :target, not a stripped attribute) */
+    .gallery-thumb { position: relative; display: block; overflow: hidden; border-radius: var(--radius-xl); box-shadow: var(--shadow-md); opacity: 0; animation: dth-fadeup 600ms ease both; }
+    .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 500ms ease; }
+    .gallery-thumb:hover img { transform: scale(1.08); }
+    .gallery-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,23,32,0) 55%, rgba(15,23,32,0.55) 100%); opacity: 0; transition: opacity 300ms ease; }
+    .gallery-thumb:hover::after { opacity: 1; }
+    .gallery-zoom { position: absolute; right: 14px; bottom: 14px; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.92); color: var(--color-primary-900); display: flex; align-items: center; justify-content: center; opacity: 0; transform: translateY(6px); transition: opacity 250ms ease, transform 250ms ease; }
+    .gallery-thumb:hover .gallery-zoom { opacity: 1; transform: translateY(0); }
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(15,23,32,0.9); align-items: center; justify-content: center; padding: 40px; }
+    .lightbox:target { display: flex; }
+    .lightbox img { max-width: min(1100px, 90vw); max-height: 85vh; width: auto; height: auto; object-fit: contain; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); animation: dth-fadeup 300ms ease both; }
+    .lightbox-close { position: absolute; top: 24px; right: 32px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.12); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; transition: background 200ms ease; }
+    .lightbox-close:hover { background: rgba(255,255,255,0.24); color: #fff; }
   </style>
 </helmet>
 
@@ -327,16 +348,49 @@
         <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-teal-600);">Gallery</span>
         <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; margin: 10px 0 0; color: var(--color-primary-900);">A closer look inside &amp; out.</h2>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 220px); gap: 16px;">
-        <img src="uploads/Gemini_Generated_Image_rvl23ervl23ervl2.png" alt="Tiny home living area and kitchen" style="grid-column: span 2; grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
-        <img src="uploads/pasted-1784183075722-0.png" alt="Corten-clad tiny home with deck" style="grid-column: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
-        <img src="uploads/Gemini_Generated_Image_hlicnlhlicnlhlic.png" alt="Dining nook with wood fire" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
-        <img src="uploads/pasted-1784183040334-0.png" alt="Dark cabin tiny home in the forest" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
-        <img src="uploads/pasted-1784183029036-0.png" alt="Driftwood tiny home exterior at dusk" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
-        <img src="uploads/tiny-home-1.jpg" alt="Cosy tiny home interior with kitchen and lounge" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
-        <img src="uploads/tiny-home-2.jpg" alt="Tiny home interior with kitchen, loft and stairs" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
-        <img src="uploads/tiny-home-4.webp" alt="Bedroom nook overlooking the forest" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 270px); gap: 18px;">
+        <a href="#gallery-1" class="gallery-thumb" style="grid-column: span 2; grid-row: span 2; animation-delay: 0ms;">
+          <img src="uploads/Gemini_Generated_Image_rvl23ervl23ervl2.png" alt="Tiny home living area and kitchen">
+          <span class="gallery-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+        </a>
+        <a href="#gallery-2" class="gallery-thumb" style="grid-column: span 2; animation-delay: 60ms;">
+          <img src="uploads/pasted-1784183075722-0.png" alt="Corten-clad tiny home with deck">
+          <span class="gallery-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+        </a>
+        <a href="#gallery-3" class="gallery-thumb" style="animation-delay: 120ms;">
+          <img src="uploads/Gemini_Generated_Image_hlicnlhlicnlhlic.png" alt="Dining nook with wood fire">
+          <span class="gallery-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+        </a>
+        <a href="#gallery-4" class="gallery-thumb" style="animation-delay: 180ms;">
+          <img src="uploads/pasted-1784183040334-0.png" alt="Dark cabin tiny home in the forest">
+          <span class="gallery-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+        </a>
+        <a href="#gallery-5" class="gallery-thumb" style="animation-delay: 240ms;">
+          <img src="uploads/pasted-1784183029036-0.png" alt="Driftwood tiny home exterior at dusk">
+          <span class="gallery-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+        </a>
+        <a href="#gallery-6" class="gallery-thumb" style="animation-delay: 300ms;">
+          <img src="uploads/tiny-home-1.jpg" alt="Cosy tiny home interior with kitchen and lounge">
+          <span class="gallery-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+        </a>
+        <a href="#gallery-7" class="gallery-thumb" style="animation-delay: 360ms;">
+          <img src="uploads/tiny-home-2.jpg" alt="Tiny home interior with kitchen, loft and stairs">
+          <span class="gallery-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+        </a>
+        <a href="#gallery-8" class="gallery-thumb" style="animation-delay: 420ms;">
+          <img src="uploads/tiny-home-4.webp" alt="Bedroom nook overlooking the forest">
+          <span class="gallery-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+        </a>
       </div>
+
+      <div id="gallery-1" class="lightbox"><a href="#gallery" class="lightbox-close">&times;</a><img src="uploads/Gemini_Generated_Image_rvl23ervl23ervl2.png" alt="Tiny home living area and kitchen"></div>
+      <div id="gallery-2" class="lightbox"><a href="#gallery" class="lightbox-close">&times;</a><img src="uploads/pasted-1784183075722-0.png" alt="Corten-clad tiny home with deck"></div>
+      <div id="gallery-3" class="lightbox"><a href="#gallery" class="lightbox-close">&times;</a><img src="uploads/Gemini_Generated_Image_hlicnlhlicnlhlic.png" alt="Dining nook with wood fire"></div>
+      <div id="gallery-4" class="lightbox"><a href="#gallery" class="lightbox-close">&times;</a><img src="uploads/pasted-1784183040334-0.png" alt="Dark cabin tiny home in the forest"></div>
+      <div id="gallery-5" class="lightbox"><a href="#gallery" class="lightbox-close">&times;</a><img src="uploads/pasted-1784183029036-0.png" alt="Driftwood tiny home exterior at dusk"></div>
+      <div id="gallery-6" class="lightbox"><a href="#gallery" class="lightbox-close">&times;</a><img src="uploads/tiny-home-1.jpg" alt="Cosy tiny home interior with kitchen and lounge"></div>
+      <div id="gallery-7" class="lightbox"><a href="#gallery" class="lightbox-close">&times;</a><img src="uploads/tiny-home-2.jpg" alt="Tiny home interior with kitchen, loft and stairs"></div>
+      <div id="gallery-8" class="lightbox"><a href="#gallery" class="lightbox-close">&times;</a><img src="uploads/tiny-home-4.webp" alt="Bedroom nook overlooking the forest"></div>
     </div>
   </section>
 
