@@ -27,6 +27,25 @@
     @keyframes dth-fadeup { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     summary::-webkit-details-marker { display: none; }
     .dth-icon { display: inline-block; vertical-align: middle; }
+
+    /* HERO CAROUSEL */
+    .hero-radio { display: none; }
+    .hero-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 900ms ease; }
+    #dth-s1:checked ~ .hero-slides .hero-slide:nth-child(1) { opacity: 1; }
+    #dth-s2:checked ~ .hero-slides .hero-slide:nth-child(2) { opacity: 1; }
+    #dth-s3:checked ~ .hero-slides .hero-slide:nth-child(3) { opacity: 1; }
+    .hero-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; background: rgba(15,23,32,0.45); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; line-height: 1; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 200ms ease, background 200ms ease; z-index: 6; user-select: none; }
+    .hero-arrow:hover { background: rgba(15,23,32,0.72); }
+    .hero-arrow-prev { left: 20px; }
+    .hero-arrow-next { right: 20px; }
+    #dth-s1:checked ~ .arrow-set-1 { opacity: 1; pointer-events: auto; }
+    #dth-s2:checked ~ .arrow-set-2 { opacity: 1; pointer-events: auto; }
+    #dth-s3:checked ~ .arrow-set-3 { opacity: 1; pointer-events: auto; }
+    .hero-dots { position: absolute; bottom: 24px; right: 32px; display: flex; gap: 9px; z-index: 6; }
+    .hero-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.45); cursor: pointer; transition: background 200ms ease, transform 200ms ease; display: block; }
+    #dth-s1:checked ~ .hero-dots .dot-1,
+    #dth-s2:checked ~ .hero-dots .dot-2,
+    #dth-s3:checked ~ .hero-dots .dot-3 { background: #fff; transform: scale(1.25); }
   </style>
 </helmet>
 
@@ -54,9 +73,32 @@
   <!-- HERO -->
   <header id="top" style="position: relative; background: #F2E9D8;">
     <div style="position: relative; width: 100%; display: flex; justify-content: flex-end;">
-      <img src="uploads/pasted-1784183029036-0.png" alt="Driftwood tiny home at sunset in the Illawarra" style="width: 70%; height: 760px; object-fit: cover; display: block;">
+      <div class="hero-carousel" style="position: relative; width: 70%; height: 760px; overflow: hidden;">
+        <input type="radio" name="dth-hero" id="dth-s1" class="hero-radio" checked>
+        <input type="radio" name="dth-hero" id="dth-s2" class="hero-radio">
+        <input type="radio" name="dth-hero" id="dth-s3" class="hero-radio">
 
-      <div class="dth-fadeup" style="position: absolute; left: clamp(20px, 4vw, 56px); bottom: 44px; max-width: 540px; background: #21525E; color: #fff; border-radius: 20px; padding: 52px 52px 48px; box-shadow: var(--shadow-lg);">
+        <div class="hero-slides" style="position: absolute; inset: 0;">
+          <img src="uploads/tiny-home-hero-1.jpg" alt="Solar-powered Driftwood tiny home glowing at dusk in the forest" class="hero-slide">
+          <img src="uploads/tiny-home-hero-2.jpg" alt="Dark-clad tiny home with a deck set up for entertaining at golden hour" class="hero-slide">
+          <img src="uploads/tiny-home-hero-3.jpg" alt="Tiny home with a glass-walled bedroom nook among bare winter trees" class="hero-slide">
+        </div>
+
+        <label for="dth-s3" class="hero-arrow hero-arrow-prev arrow-set-1">&#8249;</label>
+        <label for="dth-s2" class="hero-arrow hero-arrow-next arrow-set-1">&#8250;</label>
+        <label for="dth-s1" class="hero-arrow hero-arrow-prev arrow-set-2">&#8249;</label>
+        <label for="dth-s3" class="hero-arrow hero-arrow-next arrow-set-2">&#8250;</label>
+        <label for="dth-s2" class="hero-arrow hero-arrow-prev arrow-set-3">&#8249;</label>
+        <label for="dth-s1" class="hero-arrow hero-arrow-next arrow-set-3">&#8250;</label>
+
+        <div class="hero-dots">
+          <label for="dth-s1" class="hero-dot dot-1"></label>
+          <label for="dth-s2" class="hero-dot dot-2"></label>
+          <label for="dth-s3" class="hero-dot dot-3"></label>
+        </div>
+      </div>
+
+      <div class="dth-fadeup" style="position: absolute; left: clamp(20px, 4vw, 56px); bottom: 44px; max-width: 540px; background: #21525E; color: #fff; border-radius: 20px; padding: 52px 52px 48px; box-shadow: var(--shadow-lg); z-index: 10;">
         <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-300); margin-bottom: 16px;">
           <svg class="dth-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.5 7-12a7 7 0 10-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
           Shellharbour, NSW &amp; the Illawarra
@@ -285,11 +327,15 @@
         <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-teal-600);">Gallery</span>
         <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; margin: 10px 0 0; color: var(--color-primary-900);">A closer look inside &amp; out.</h2>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 220px); gap: 16px;">
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 220px); gap: 16px;">
         <img src="uploads/Gemini_Generated_Image_rvl23ervl23ervl2.png" alt="Tiny home living area and kitchen" style="grid-column: span 2; grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
         <img src="uploads/pasted-1784183075722-0.png" alt="Corten-clad tiny home with deck" style="grid-column: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
         <img src="uploads/Gemini_Generated_Image_hlicnlhlicnlhlic.png" alt="Dining nook with wood fire" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
         <img src="uploads/pasted-1784183040334-0.png" alt="Dark cabin tiny home in the forest" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
+        <img src="uploads/pasted-1784183029036-0.png" alt="Driftwood tiny home exterior at dusk" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
+        <img src="uploads/tiny-home-1.jpg" alt="Cosy tiny home interior with kitchen and lounge" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
+        <img src="uploads/tiny-home-2.jpg" alt="Tiny home interior with kitchen, loft and stairs" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
+        <img src="uploads/tiny-home-4.webp" alt="Bedroom nook overlooking the forest" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
       </div>
     </div>
   </section>
