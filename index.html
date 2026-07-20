@@ -176,7 +176,7 @@
     /* CONTACT FORM CARD — the Input/Select/Textarea components set their own
        label/border/text colors via inline styles, so overrides need !important
        to win; scoped design-token custom properties alone are not enough. */
-    .contact-form-card label { color: var(--color-teal-400) !important; }
+    .contact-form-card label { color: #ffffff !important; }
     .contact-form-card input,
     .contact-form-card select,
     .contact-form-card textarea {
@@ -635,7 +635,7 @@
           </div>
         </div>
       </div>
-      <div class="contact-form-card" style="background: var(--color-primary-800); border-radius: var(--radius-2xl); padding: 32px; box-shadow: var(--shadow-lg);">
+      <div class="contact-form-card" style="background: #21525E; border-radius: var(--radius-2xl); padding: 32px; box-shadow: var(--shadow-lg);">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
           <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Input" label="First name" placeholder="Jamie" full-width="{{ true }}" hint-size="100%,64px"></x-import>
           <x-import component-from-global-scope="WollongongWebDesignCo_f9cb38.Input" label="Last name" placeholder="Smith" full-width="{{ true }}" hint-size="100%,64px"></x-import>
